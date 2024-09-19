@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="styleaheet" href="index.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Administration</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Course Administration</h1>
 
-    </head>
-    <body>
-        <h1>Course Administration</h1>
-        <div id="student-courses">
-            <h2></h2>
-            <form id="Sign-Up">
-                <input type="username" id="username" aria-placeholder="Enter your userName">
-                <input type="password" id="password" aria-placeholder="Enter your Password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <footer><a href="index.html"> Student Center</a></footer>
-    </body>
+    <!-- Login Form -->
+    <div id="login">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter your Username" required>
+            <input type="password" id="password" placeholder="Enter your Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Course Management Section -->
+    <div id="courseManagement" style="display:none;">
+        <h2>Manage Courses</h2>
+        <form id="courseForm">
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="subjectArea">Subject Area:</label>
+            <select id="subjectArea" name="subjectArea" required>
+                <option value="math">Math</option>
+                <option value="english">English</option>
+                <option value="science">Science</option>
+                <option value="art">Art</option>
+                <option value="history">History</option>
+            </select>
+
+            <label for="credits">Number of Credits:</label>
+            <input type="number" id="credits" name="credits" min="1" max="10" required>
+
+            <button type="submit">Add/Update Course</button>
+        </form>
+
+        <h3>Existing Courses</h3>
+        <ul id="courseList">
+            
+      <!-- Courses will be added here -->
+            
+        </ul>
+    </div> 
+
+    <footer><a href="index.html">Student Center</a></footer>
+
+    <script src="index.js"></script>
+</body>
 </html>
