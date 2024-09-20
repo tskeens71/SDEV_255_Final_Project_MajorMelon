@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>School Website</title>
+    <title>Courses</title>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">University of Major Melons</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -134,37 +134,59 @@
     </div>
     <!-- SignUp Modal End -->
 
-   <!-- Carousel Start -->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="./img/student-group.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-          <img src="./img/watermelon-students.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-          <img src="./img/Watermelon.png" class="d-block w-100" alt="...">
-      </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- Carousel End -->
+        <!-- Dropdown for selecting courses -->
+        <div class="mt-4">
+            <label for="courseSelect" class="form-label">Select Courses:</label>
+            <select id="courseSelect" class="form-select" multiple>
+                <!-- Options will be added dynamically -->
+            </select>
+            <button id="addToSchedule" class="btn btn-success mt-3">Add to Schedule</button>
+        </div>
+
+        <!-- Student's Schedule -->
+        <div class="mt-4">
+            <h3>Student's Schedule</h3>
+            <ul id="scheduleList" class="list-group">
+                <!-- Scheduled courses will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Add Course Modal -->
+    <div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCourseForm">
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label">Course Name</label>
+                            <input type="text" class="form-control" id="courseName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="courseDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subjectArea" class="form-label">Subject Area</label>
+                            <input type="text" class="form-control" id="subjectArea" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="credits" class="form-label">Credits</label>
+                            <input type="number" class="form-control" id="credits" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Course</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
