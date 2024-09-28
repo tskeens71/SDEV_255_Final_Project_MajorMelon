@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head> 
-     <!-- Required meta tags -->
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -14,8 +14,8 @@
 </head>
 <body>
 
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">University of Major Melons</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +42,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link active" id="signupBtn" aria-current="page" data-bs-toggle="modal" data-bs-target="#signup">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" id="logoutButton" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -77,6 +80,26 @@
         </div>
     </div>
     <!-- Login Modal End -->
+
+    <!-- Logout Modal Start -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutLabel">Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmLogout" class="btn btn-danger">Yes, Logout</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Logout Modal End -->
 
     <!-- SignUp Modal Start -->
     <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
@@ -134,55 +157,25 @@
     </div>
     <!-- SignUp Modal End -->
 
-        <!-- Dropdown for selecting courses -->
-        <div class="mt-4">
-            <label for="courseSelect" class="form-label">Select Courses:</label>
-            <select id="courseSelect" class="form-select" multiple>
-                <!-- Options will be added dynamically -->
-            </select>
-            <button id="addToSchedule" class="btn btn-success mt-3">Add to Schedule</button>
-        </div>
-
-        <!-- Student's Schedule -->
-        <div class="mt-4">
-            <h3>Student's Schedule</h3>
-            <ul id="scheduleList" class="list-group">
-                <!-- Scheduled courses will be added here dynamically -->
-            </ul>
-        </div>
+    <!-- Dropdown for selecting courses -->
+    <div class="mt-4">
+        <label for="courseSelect" class="form-label">Select Courses:</label>
+        <select id="courseSelect" class="form-select" multiple>
+            <!-- Options will be added dynamically -->
+    <div class="mt-4">
+        <label for="courseSelect" class="form-label">Select Courses:</label>
+        <select id="courseSelect" class="form-select" multiple>
+            <!-- Options will be added dynamically -->
+        </select>
+        <button id="addToSchedule" class="btn btn-success mt-3">Add to Schedule</button>
     </div>
 
-    <!-- Add Course Modal -->
-    <div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="addCourseForm">
-                        <div class="mb-3">
-                            <label for="courseName" class="form-label">Course Name</label>
-                            <input type="text" class="form-control" id="courseName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="courseDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="courseDescription" rows="3" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subjectArea" class="form-label">Subject Area</label>
-                            <input type="text" class="form-control" id="subjectArea" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="credits" class="form-label">Credits</label>
-                            <input type="number" class="form-control" id="credits" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add Course</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!-- Student's Schedule -->
+    <div class="mt-4">
+        <h3>Student's Schedule</h3>
+        <ul id="scheduleList" class="list-group">
+            <!-- Scheduled courses will be added here dynamically -->
+        </ul>
     </div>
 
     <!-- Link to external JavaScript file -->
