@@ -1,0 +1,20 @@
+
+body {
+    background-color: #56ed8d;
+   
+}
+
+.navbar {
+    position: relative; /* or position: fixed; */
+    z-index: 1000; /* Ensure this is higher than the carousel */
+}
+
+h1, h2 {
+    color: #333; 
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+}
